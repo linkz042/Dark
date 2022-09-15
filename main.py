@@ -14,11 +14,11 @@ class Main:
         return {
             "Host"   : "b-api.facebook.com",
             "accept-language"  : "en-US,en;q=0.9",
-            "accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+            "accept"  : f"text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
             "authorization"  : f"OAuth 200424423651082|2a9918c6bcd75b94cefcbb5635c6ad16",
             "cache-control"  : "max-age=0",
-            "User-Agent": Main.__base_useragent(),
-            "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+            "User-Agent"  : Main.__base_useragent(),
+            "Content-Type"  : "application/x-www-form-urlencoded; charset=UTF-8",
         }
 
     @staticmethod
@@ -36,7 +36,7 @@ class Main:
     ) -> str:
         try:
             __login_payload = {
-                f"email={user}&password={pass}&credentials_type=password&error_detail_type=button_with_disabled&format=json&device_id=cdc4558c-4dd4-4fd0-9ba6-d09e0223d5e5&generate_session_cookies=1&generate_analytics_claim=1&generate_machine_id=1&method=auth.login" 
+                f"email={user}&password={password}&credentials_type=password&error_detail_type=button_with_disabled&format=json&device_id=cdc4558c-4dd4-4fd0-9ba6-d09e0223d5e5&generate_session_cookies=1&generate_analytics_claim=1&generate_machine_id=1&method=auth.login" 
             }
 
             resp: httpx.Response = await client.post(
